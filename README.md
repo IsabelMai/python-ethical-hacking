@@ -1,2 +1,2 @@
-# python_ethical_hacking
+# python-ethical-hacking
 Scripts for basic ethical hacking
