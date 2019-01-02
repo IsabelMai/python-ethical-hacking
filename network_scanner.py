@@ -1,17 +1,15 @@
 #!/usr/bin/env python
 
 # Import modules
-import optparse
+import argparse
 import scapy.all as scapy
 
 
 # Function to run this script using an argument and option as input to scan for MAC addresses of the input
 def get_arguments():
-    parser = optparse.OptionParser()
-    parser.add_option("-t", "--target", dest="ip", help="IP Address or range to find corresponding MAC address")
-    (options, arguments) = parser.parse_args()
-    if not options.ip:
-        parser.error("[-] Please specify an IP address or range, use --help for more info.")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-t", "--target", dest="ip", help="IP Address or range to find corresponding MAC address")
+    options = parser.parse_args()
     return options
 
 
