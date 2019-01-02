@@ -13,7 +13,7 @@ def get_arguments():
     return options
 
 
-# Function to get MAC addresses of certain IP addresses (same functionality as arping method and netdiscover)
+# Function to get MAC addresses of certain IP addresses (same functionality as arping method)
 def scan(ip):
     arp_request = scapy.ARP(pdst=ip)
     broadcast = scapy.Ether(dst="ff:ff:ff:ff:ff:ff")
