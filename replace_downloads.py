@@ -17,7 +17,7 @@ def set_load(packet, load):
     return packet
 
 
-# Function to convert packets that were captured in the queue to a scapy packet for analysis
+# Function to convert packets that were captured in the queue to a scapy packet for manipulation
 def process_packet(packet):
     scapy_packet = scapy.IP(packet.get_payload())
     if scapy_packet.haslayer(scapy.Raw):
